@@ -7,7 +7,8 @@ Marks a deployment status for GitHub actions.
 
 ### Inputs
 
-- `staus`: Deployment status. (default: pending)
+- `deployment-id`: Deployment id. (default: ${{github.event.deployment.id}})
+- `state`: Deployment status. (default: pending)
 - `description`: Descriptive message about the deployment state.
 - `log-url`: Log url location.
 - `token`: Github repository token.
@@ -39,8 +40,9 @@ jobs:
         npm run deploy
 
     - name: 'change deployment status'
-      uses: 'sadayuki-matsuno/github-deployment-status@v1'
+      uses: 'sadayuki-matsuno/github-deployment-status@v2'
       with:
-        status: '${{ job.status }}'
+        deployment-id: ${{github.event.deployment.id}}
+        state: '${{ job.state }}'
         token: '${{ github.token }}'
 ```
