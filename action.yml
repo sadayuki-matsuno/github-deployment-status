@@ -2,7 +2,10 @@ name: 'Deliverybot Deployment Status'
 description: 'Set the status of a deployment'
 author: 'deliverybot'
 inputs:
-  state:
+  deployment-id:
+    description: 'Deployment id'
+    default: 'payload.deployment.id'
+  status:
     description: 'Deployment status to set the action as'
     default: 'pending'
   token:

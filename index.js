@@ -38,6 +38,9 @@ async function run() {
       target_url: url,
       description,
     };
+
+    console.log(params)
+
     if (env) {
       params.environment = env;
     }
