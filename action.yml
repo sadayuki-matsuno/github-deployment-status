@@ -5,7 +5,7 @@ inputs:
   deployment-id:
     description: 'Deployment id'
     default: 'payload.deployment.id'
-  status:
+  state:
     description: 'Deployment status to set the action as'
     default: 'pending'
   token:
